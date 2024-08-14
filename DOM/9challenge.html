@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- nếu nhận enter hoặc onclick input thì tính toán -->
+    <input
+      class="input"
+      placeholder="enter your price"
+      type="text"
+      onkeydown="if(event.key === 'Enter'){updateInput()}"
+    />
+    <button
+      onclick="updateInput()
+    "
+    >
+      calculate
+    </button>
+    <p class="display"></p>
+  </body>
+  <script>
+    const inputElement = document.querySelector("input");
+    let cost = Number(inputElement.value) * 100;
+    // function calculate(){
+    //     // nếu giá trị nhập vào < 40 thì cộng 10k ship nếu không thì giữ nguyên
+    //     if(inputElement.value<40){
+    //         document.querySelector('.display') =  `${inputElement.value } $`;
+    //     }
+    //     else document.querySelector('.display') =  `${inputElement.value}`
+    // }
+    function updateInput() {
+      if (inputElement.value < 40)
+        document.querySelector(".display").innerHTML = `${
+          parseFloat(inputElement.value) + 10
+        } $`;
+      else if (inputElement.value > 40) {
+        document.querySelector(
+          ".display"
+        ).innerHTML = `${inputElement.value} $`;
+      }
+    }
+    console.log(typeof inputElement.value);
+  </script>
+</html>

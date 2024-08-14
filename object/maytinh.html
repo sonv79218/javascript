@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="
+        updateCalculation(1)"
+    >
+      1
+    </button>
+    <button
+      onclick="
+        updateCalculation(2)"
+    >
+      2
+    </button>
+    <button
+      onclick="
+        updateCalculation(3)"
+    >
+      3
+    </button>
+    <br />
+    <button
+      onclick="
+        updateCalculation(4)"
+    >
+      4
+    </button>
+    <button
+      onclick="
+        updateCalculation(5)"
+    >
+      5
+    </button>
+    <button
+      onclick="
+        updateCalculation(6)"
+    >
+      6
+    </button>
+    <br />
+    <button
+      onclick="
+        updateCalculation(7)"
+    >
+      7
+    </button>
+    <button
+      onclick="
+        updateCalculation(8)"
+    >
+      8
+    </button>
+    <button
+      onclick="
+        updateCalculation(9)"
+    >
+      9
+    </button>
+    <br />
+    <button
+      onclick="
+        updateCalculation('+')"
+    >
+      +
+    </button>
+    <button
+      onclick="
+        updateCalculation('-')"
+    >
+      -
+    </button>
+    <button
+      onclick="
+        updateCalculation('*')"
+    >
+      *
+    </button>
+    <button
+      onclick="
+        updateCalculation('/')"
+    >
+      /
+    </button>
+    <br />
+    <button
+      onclick="
+        updateCalculation('.')"
+    >
+      .
+    </button>
+    <button
+      onclick="
+    //   chuyển đổi string thành dãy số
+      if(String(calculation).trim() != ''){calculation = eval(calculation);}
+      else{calculation = '0'}
+      console.log(calculation);
+    //   hmm kiểu nếu không có thì 
+      localStorage.setItem('calculation', calculation)"
+    >
+      =
+    </button>
+    <button
+      onclick="calculation = '';
+    console.log(calculation);
+    localStorage.setItem('calculation', calculation)
+    "
+    >
+      reset
+    </button>
+  </body>
+  <script>
+    // dùng hàm để tinh
+    //bước 1 đặt biến calculation bằng get item. nó sẽ lấy ra giá trị được lưu từ hàm set item. nếu chưa được lưu thì là dấu "" không có giá trị
+    var calculation = localStorage.getItem("calculation") || "";
+    // var calculation = "";
+    function updateCalculation(value) {
+      calculation += value;
+      //   bước 2 lưu giá trị khi tính toán vào biến calculation
+      localStorage.setItem("calculation", calculation);
+      console.log(calculation);
+    }
+  </script>
+</html>

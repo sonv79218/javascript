@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button
+      onclick="if (quantity + 4 > 10 ){alert('cart is full')}
+    else{quantity += 4 ;console.log('cart have ' + quantity + ' products' );}"
+    >
+      +4
+    </button>
+    <button
+      onclick="if (quantity + 3 > 10 ){alert('cart is full')}
+    else{quantity += 3 ;console.log('cart have ' + quantity + ' products' );}"
+    >
+      +3
+    </button>
+    <button
+      onclick="if (quantity + -1 < 0 ){alert('not have any products')}
+    else{quantity += -1 ;console.log('cart have ' + quantity + ' products' );}"
+    >
+      remove products
+    </button>
+    <button
+      onclick="if (quantity + -2 < 0 ){alert('not have any products')}
+    else{quantity += -2 ;console.log('cart have ' + quantity + ' products' );}"
+    >
+      -2
+    </button>
+
+    <script>
+      var quantity = 0;
+    </script>
+  </body>
+</html>

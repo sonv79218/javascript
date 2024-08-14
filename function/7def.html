@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>đổi độ</title>
+  </head>
+  <body></body>
+  <script>
+    var oF;
+    function convert_C_to_F(oC) {
+      oF = (oC * 9) / 5 + 32;
+      console.log(`${oC} Độ C là ${oF} Độ F `);
+    }
+    // convert_C_to_F(50);
+    function convert_F_to_C(oF) {
+      oC = (oF - 32) * (5 / 9);
+      console.log(`${oF} Độ F là ${oC} Độ C `);
+    }
+    // convert_F_to_C(122);
+    function convertTemp(degree, unit) {
+      if (unit == "c") {
+        convert_C_to_F(degree);
+      } else if (unit == "f") {
+        convert_F_to_C(degree);
+      } else console.log("???");
+    }
+    convertTemp(25, "c");
+  </script>
+</html>

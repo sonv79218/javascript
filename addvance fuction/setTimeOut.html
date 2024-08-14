@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // hàm set time out dùng để thực thi function khi thời gian kết thúc. setTimeout(hàm, thời gian)
+    // hàm bất đồng bộ async
+    setTimeout(function () {
+      // trong này là đồng bộ sync
+      console.log("timeout");
+    }, 3000);
+
+    console.log("next line");
+
+    // hàm này sẽ liên tục thực hiện, lặp vô hạn
+    setInterval(function () {
+      console.log("interval");
+    }, 3000);
+    //
+  </script>
+</html>

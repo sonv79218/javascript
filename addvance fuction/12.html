@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    // ý tưởng là biến sẽ lưu phương thức
+    // 1 function
+    function greeting() {
+      console.log("hello");
+    }
+    // anonymous function lưu trong biến. biến sẽ lưu cấu trúc của fuction
+    const function1 = function () {
+      console.log("hello2");
+    };
+    console.log(function1);
+    function1();
+    // function trong 1 đối tượng sẽ gọi là phương thức. method
+    const object1 = {
+      num: 2,
+      fun: function greeting() {
+        console.log("hello3");
+      },
+    };
+    // sử dụng phương thức
+    object1.fun();
+
+    // truyền tham số vào fuction
+    function display(param) {
+      console.log(param);
+    }
+    display(2);
+    // truyền function vào trong function
+    function run(param) {
+      param();
+      console.log(typeof param);
+    }
+    run(function () {
+      console.log("hello 4");
+    });
+  </script>
+</html>

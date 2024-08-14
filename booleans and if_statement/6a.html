@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    var hour = 1;
+    var name = "vu truong son";
+    var randNum = Math.random();
+    var result;
+    var guest = "head";
+    var message;
+    console.log(randNum);
+    // if (hour < 12 && hour > 6) {
+    //   console.log("good morning " + name);
+    // } else {
+    //   if (hour < 17 && hour > 13) {
+    //     console.log("good afternoon " + name);
+    //   } else {
+    //     console.log("good night " + name);
+    //   }
+    // }
+    // ternary operator ?:
+    hour < 12 && hour > 6
+      ? (message = "good morning")
+      : hour < 17 && hour > 13
+      ? (message = "good afternoon")
+      : (message = "good everning");
+    console.log(message);
+    if (randNum < 0.5) {
+      //   console.log("head");
+      result = "head";
+    } else result = "tail";
+    if (guest == result) {
+      console.log("you win ");
+    } else console.log("you lose");
+  </script>
+</html>

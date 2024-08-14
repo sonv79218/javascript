@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>app</title>
+  </head>
+  <body>
+    <!-- khi ấn vào  thì tăng biến message và hiển thị thông báo -->
+    <button class="btn_send" onclick="message++; displayNotification()">
+      send
+    </button>
+    <!-- khi ấn vào thì giảm biến message. không cần hiển thị thông báo vì đã sẵn hiển thị rồi. nếu
+     mà biến mess nhỏ hơn 0 thì dừng thông báo -->
+    <button
+      class="btn_send"
+      onclick="message--;
+    if(message<=0){
+      stopNotification()
+    }"
+    >
+      remove
+    </button>
+  </body>
+  <script>
+    let message = 2;
+    // biến is display đang là false vì không có giá trị
+    let isDisplay;
+    // biến intervalID
+    let intervalID;
+    //
+    function displayNotification() {
+      if (isDisplay) {
+        return;
+      }
+      isDisplay = true;
+      intervalID = setInterval(function () {
+        document.title == "app"
+          ? (document.title = `(${message})message`)
+          : (document.title = "app");
+      }, 1000);
+      console.log(`đây là id : ${intervalID}`);
+    }
+    function stopNotification() {
+      isDisplay = false;
+      console.log(`đây là id : ${intervalID}`);
+      // syntax của clearInterval là
+      clearInterval(intervalID);
+      document.title = "app";
+    }
+  </script>
+</html>

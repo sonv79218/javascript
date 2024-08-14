@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>búa kéo bao</title>
+  </head>
+  <body>
+    <h1>búa kéo bao</h1>
+    <button
+      onclick="
+    PickMoveCom();
+    console.log(moveCom);
+    var result = '';
+    moveCom =='búa'? result = 'hòa':moveCom == 'bao'?result = 'thua': moveCom == 'kéo'? result = 'thắng':console.log('???');
+    console.log(`bạn chọn búa. máy chọn ${moveCom} . bạn ${result}`);
+    
+    "
+    >
+      búa
+    </button>
+    <button>kéo</button>
+    <button>bao</button>
+  </body>
+  <script>
+    var moveCom = "";
+    const PickMoveCom = () => {
+      var a = Math.random();
+
+      console.log(a);
+
+      //   if (a < 1 / 3) {
+      //     console.log(a);
+      //     moveCom = "rock";
+
+      //   }
+      a < 1 / 3
+        ? (moveCom = "búa")
+        : a < 2 / 3
+        ? (moveCom = "bao")
+        : (moveCom = "kéo");
+    };
+  </script>
+</html>

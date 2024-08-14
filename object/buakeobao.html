@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>búa kéo bao</title>
+  </head>
+  <body>
+    <h1>búa kéo bao</h1>
+    <button
+      onclick="
+    score.loses=0;
+    score.wins=0;
+    score.ties=0;
+    localStorage.removeItem('score')"
+      ;
+    >
+      reset
+    </button>
+    <button
+      onclick="
+    PickMoveCom();
+    console.log(moveCom);
+    var result = '';
+    moveCom =='búa'? (result = 'hòa', score.ties += 1):moveCom == 'bao'?(result = 'thua',score.loses +=1): moveCom == 'kéo'?(result = 'thắng',score.wins+=1) :console.log('???');
+  //  lưu set json của object score vào biến score.  
+    localStorage.setItem('score', JSON.stringify(score));
+    alert(`bạn chọn búa. máy chọn ${moveCom} . bạn ${result}
+     wins: ${score.wins} , loses: ${score.loses} ,ties: ${score.ties} `);
+     
+    "
+    >
+      búa
+    </button>
+    <button>kéo</button>
+    <button>bao</button>
+  </body>
+  <script>
+    //
+    // lấy dữ liệu từ biến score lưu vào đối tượng score. vì đối tượng lưu kiểu dữ liệu đối tượng nên phải chuyển như thế
+    let score = JSON.parse(localStorage.getItem("score")) || {
+      wins: 0,
+      loses: 0,
+      ties: 0,
+    };
+    //
+
+    console.log(localStorage.getItem("score"));
+    // if (!score) {
+    //   score = {
+    //     wins: 0,
+    //     loses: 0,
+    //     ties: 0,
+    //   };
+    // }
+    var moveCom = "";
+    const PickMoveCom = () => {
+      var a = Math.random();
+
+      console.log(a);
+
+      //   if (a < 1 / 3) {
+      //     console.log(a);
+      //     moveCom = "rock";
+
+      //   }
+      a < 1 / 3
+        ? (moveCom = "búa")
+        : a < 2 / 3
+        ? (moveCom = "bao")
+        : (moveCom = "kéo");
+    };
+  </script>
+</html>

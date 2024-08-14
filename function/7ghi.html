@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>convert_length</title>
+  </head>
+  <body></body>
+  <script>
+    // var km, miles, feet, from, to, length;
+    function convert_Length(length, from, to) {
+      if (from === "km" && to === "miles") {
+        return `${length} km = ${length / 1.6} miles`;
+      } else if (from === "miles" && to === "km") {
+        return `${length} miles = ${length * 1.6} km`;
+      }
+    }
+    // let a = convert_Length(50, "km", "miles");
+    console.log(convert_Length(50, "km", "miles"));
+    console.log(convert_Length(50, "miles", "km"));
+  </script>
+</html>

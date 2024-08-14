@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body></body>
+  <script>
+    const convert_C_to_F = (oC) => {
+      return `${oC} độ C = ${(oC * 9) / 5 + 32} độ F `;
+    };
+
+    const convert_F_to_C = (oF) => {
+      return `${oF} độ F = ${(oF - 32) * (5 / 9)} độ C`;
+    };
+
+    const convert = (degree, unit) => {
+      unit === "oC"
+        ? console.log(convert_C_to_F(degree))
+        : unit === "oF"
+        ? console.log(convert_F_to_C(degree))
+        : console.log("???");
+    };
+    convert(25, "oC");
+    convert(25, "oF");
+    convert(25, "o");
+  </script>
+</html>
